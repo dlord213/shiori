@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { GENRES } from "@/app/utils/manga";
-import { ChevronRight, Book, History } from "lucide-react";
+import { GENRES } from "@/utils/manga";
+import { ChevronRight, Book } from "lucide-react";
 
 export default async function Page({
   params,
@@ -71,7 +71,6 @@ export default async function Page({
 
         {/* RIGHT SIDE */}
         <aside className="hidden my-4 lg:flex flex-col gap-8">
-        
           {/* GENRE ROW */}
           <div>
             <div className="flex flex-row gap-2">

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { GENRES } from "@/app/utils/manga";
-import { Book, ChevronLeft, ChevronRight, History } from "lucide-react";
+import { GENRES } from "@/utils/manga";
+import { Book, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default async function Page({
   params,

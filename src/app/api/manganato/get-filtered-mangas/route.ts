@@ -1,4 +1,4 @@
-import { fetchMangaListByGenre } from "@/app/utils/manga";
+import { fetchMangaListByGenre } from "@/utils/manga";
 import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {

@@ -7,7 +7,7 @@ import {
   Table,
   TableProperties,
 } from "lucide-react";
-import { GENRES } from "./utils/manga";
+import { GENRES } from "../utils/manga";
 
 export default async function Home() {
   const latestReleases = await (

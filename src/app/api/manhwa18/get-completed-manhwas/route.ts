@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { fetchManhwas, baseUrl } from "@/app/utils/manhwa";
+import { fetchManhwas, baseUrl } from "@/utils/manhwa";
 
 export async function GET(req: Request) {
   const url = new URL(req.url);

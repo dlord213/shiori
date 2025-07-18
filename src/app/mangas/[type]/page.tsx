@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { GENRES } from "@/app/utils/manga";
+import { GENRES } from "@/utils/manga";
 import { ChevronRight, Book } from "lucide-react";
 
 export default async function Page({
@@ -41,27 +41,35 @@ export default async function Page({
 
           <div className="flex flex-col gap-4 xl:p-0 px-4">
             <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-              {typeReleases.mangas.map(async (manga) => (
-                <Link
-                  href={`/read/${manga.mangaUrl}`}
-                  className="flex flex-col gap-2 relative transition-all delay-0 duration-200 hover:scale-105"
-                  key={manga.chapterUrl}
-                >
-                  <img
-                    src={`${
-                      process.env.NEXT_PUBLIC_API_PATH
-                    }/manga-proxy?url=${encodeURIComponent(manga.imageUrl)}`}
-                    alt={manga.title}
-                    className="h-full object-cover rounded-xl"
-                  />
-                  <div className="absolute w-full bottom-0 p-2 text-white bg-black/75 rounded-xl">
-                    <h1 className="font-bold text-lg text-ellipsis">
-                      {manga.title}
-                    </h1>
-                    <p>{manga.latestChapter}</p>
-                  </div>
-                </Link>
-              ))}
+              {typeReleases.mangas.map(
+                async (manga: {
+                  mangaUrl: string;
+                  chapterUrl: string;
+                  imageUrl: string;
+                  title: string;
+                  latestChapter: string;
+                }) => (
+                  <Link
+                    href={`/read/${manga.mangaUrl}`}
+                    className="flex flex-col gap-2 relative transition-all delay-0 duration-200 hover:scale-105"
+                    key={manga.chapterUrl}
+                  >
+                    <img
+                      src={`${
+                        process.env.NEXT_PUBLIC_API_PATH
+                      }/manga-proxy?url=${encodeURIComponent(manga.imageUrl)}`}
+                      alt={manga.title}
+                      className="h-full object-cover rounded-xl"
+                    />
+                    <div className="absolute w-full bottom-0 p-2 text-white bg-black/75 rounded-xl">
+                      <h1 className="font-bold text-lg text-ellipsis">
+                        {manga.title}
+                      </h1>
+                      <p>{manga.latestChapter}</p>
+                    </div>
+                  </Link>
+                )
+              )}
             </div>
           </div>
 

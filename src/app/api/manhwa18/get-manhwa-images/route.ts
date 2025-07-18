@@ -2,7 +2,7 @@ import axios from "axios";
 import * as cheerio from "cheerio";
 
 import { NextResponse } from "next/server";
-import { commonHeaders, baseUrl } from "@/app/utils/manhwa";
+import { commonHeaders, baseUrl } from "@/utils/manhwa";
 
 export async function GET(req: Request) {
   const url = new URL(req.url);

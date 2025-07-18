@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
 
-import { commonHeaders, baseUrl } from "@/app/utils/manhwa";
+import { commonHeaders, baseUrl } from "@/utils/manhwa";
 import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
